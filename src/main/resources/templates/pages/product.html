@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/pages/product.css}">
+    <title>Products</title>
+</head>
+<body>
+    <h1>Products</h1>
+
+    <div class="container-product-filter">
+        <div class="card-product-filter" th:each="products : ${products}">
+
+            <img class="img" th:src="@{${products.imagemUrl}}" alt="img">
+
+            <div class="card-footer">
+                <h5 th:text="'Name: ' + ${products.name}"></h5>
+                <h5 th:text="'Description: ' + ${products.description}"></h5>
+                <h5 th:text="'Price: ' + ${products.price}"></h5>
+                <a class="editProduct" th:attr="data-id=${products.id},
+                    data-imagemUrl=${products.imagemUrl},
+                    data-name=${products.name},
+                    data-description=${products.description},
+                    data-price=${products.price}">
+                    Editar product</a>
+            </div>
+        </div>
+
+        <div id="card-product" class="card-product">
+            <h1>Edit product</h1>
+            <form>
+                <img class="imagemUrl" src="" alt="imagem">
+                <label class="imagemLabel" for="arquivo">Altera imagem</label>
+                <input class="imagem" type="file" id="arquivo">
+                <input class="name" type="text">
+                <input class="description" type="text">
+                <input class="price" type="text">
+                <button>Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <script th:src="@{/js/pages/product.js}"></script>
+</body>
+</html>

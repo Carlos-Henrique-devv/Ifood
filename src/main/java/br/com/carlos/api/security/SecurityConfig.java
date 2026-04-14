@@ -16,20 +16,24 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.GET,"/users").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT,"/users").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE,"/users/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/users", "/painel", "/usuarios").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT,"/users", "/usuarios").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/usuarios/add").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE,"/users/**", "/usuarios/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/product/**", "/category").hasAnyRole("COMMON", "ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/product", "/category").hasAnyRole("COMMON", "ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/product", "/category").hasAnyRole("COMMON", "ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/product/**", "/category/**").hasAnyRole("COMMON", "ADMIN")
 
                         .anyRequest().permitAll())
 
                 .formLogin(form -> form.loginPage("/login")
                         .failureUrl("/login?erro=true")
-                        .defaultSuccessUrl("/users")
+                        .defaultSuccessUrl("/painel")
                         .permitAll())
                 .logout(logout -> logout.permitAll())
                 .httpBasic(Customizer.withDefaults())
                 .csrf(csrf -> csrf.disable());
-
 
         return http.build();
     }

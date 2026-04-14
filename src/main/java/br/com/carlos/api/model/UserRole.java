@@ -3,7 +3,6 @@ package br.com.carlos.api.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,7 +17,7 @@ public class UserRole {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "username", length = 100, nullable = false, unique = true)
+    @Column(length = 100, nullable = false, unique = true)
     private String username;
 
     @Column(name = "password", length = 100, nullable = false)
@@ -30,6 +29,7 @@ public class UserRole {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
+
     private Set<Role> roles = new HashSet<>();
 
     public UserRole() {

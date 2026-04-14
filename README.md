@@ -5,6 +5,7 @@
 ## 📌 Sobre o projeto
 
 Este projeto é um exemplo completo de aplicação web utilizando **Spring Boot**, **Spring Security**, **Java 25**, **Token JWT**, **Fetch com JS** e um banco de dados **MySQL**.  
+É também temos um frontend com **Html** e **Css** com um pouco de **js**  
 Neste projeto, utilizei roles para autenticar rotas que o usuário comum não tem permissão para acessar, como as rotas (`/auth`) e (`/users`).  
 O **JWT** é utilizado para gerar um token quando o usuário realiza o login. Atenção! O usuário que faz login na rota de autenticação, nesse caso a rota de autenticação
 e (`/auth`), não tem relação com o usuário que faz login na rota de login que é a rota (`/signin`).  
@@ -27,6 +28,8 @@ Já as nossas **ROLES** são criada via CommandLineRunner e só da run no projet
 - Spring Boot Devtools
 - Lombok
 - Validation
+- Html e css
+- JS
 
 ---
 

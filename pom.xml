@@ -11,6 +11,7 @@
 	<groupId>br.com.carlos</groupId>
 	<artifactId>Projeto-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>PROJETO-API</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -20,7 +21,7 @@
 	<developers>
 		<developer/>
 	</developers>
-	<scm>
+    <scm>
 		<connection/>
 		<developerConnection/>
 		<tag/>
@@ -52,7 +53,6 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-
 
 		<dependency>
             <groupId>org.springframework.boot</groupId>

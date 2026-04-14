@@ -1,7 +1,6 @@
 package br.com.carlos.api.token;
 
 import br.com.carlos.api.dto.LoginRequestDto;
-import br.com.carlos.api.model.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;

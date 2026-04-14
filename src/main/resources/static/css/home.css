@@ -118,6 +118,16 @@ header {
     transition: 0.3s;
 }
 
+.logount {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.logount:hover {
+    transition: 0.3ms;
+    transform: scale(1.15);
+}
 
 .carrinho-desktop {
     width: 35px;
@@ -228,6 +238,11 @@ main {
     border-radius: 50px;
 }
 
+.menu-link:hover {
+    background-color: var(--cor-primaria);
+    transition: 0.3s;
+}
+
 .menu-title {
     margin: 10px;
     color: var(--cor-segundaria);
@@ -269,6 +284,7 @@ main {
 }
 
 .menu-item-footer {
+    min-width: 100%;
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -277,9 +293,12 @@ main {
 
 
 .menu-item-footer h3 {
-    margin-top: 15px;
     color: var(--cor-segundaria);
     text-align: center;
+}
+
+.menu-item-footer .name {
+    margin-top: 2px;
 }
 
 
@@ -436,6 +455,7 @@ footer {
     .menu-title {
         margin: 10px;
     }
+    
     .menu-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -445,7 +465,7 @@ footer {
 
     .menu-item {
         max-width: 150px;
-        padding: 10px;
+        padding: 5px;
         gap: 5px;
     }
 

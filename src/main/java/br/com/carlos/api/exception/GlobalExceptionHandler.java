@@ -1,6 +1,7 @@
 package br.com.carlos.api.exception;
 
 import br.com.carlos.api.exception.duplicate.DuplicateEmailException;
+import br.com.carlos.api.exception.duplicate.DuplicateFiedException;
 import br.com.carlos.api.exception.duplicate.DuplicatePhoneException;
 import br.com.carlos.api.exception.duplicate.DuplicateUserNameException;
 import org.springframework.http.ResponseEntity;
@@ -39,4 +40,11 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(404)
                 .body(idNotFoundException.getMessage());
     }
+
+    @ExceptionHandler(DuplicateFiedException.class)
+    public ResponseEntity<?> duplicateFildException(DuplicateFiedException duplicateFiedException) {
+        return ResponseEntity.status(409)
+                .body(duplicateFiedException.getMessage());
+    }
+
 }

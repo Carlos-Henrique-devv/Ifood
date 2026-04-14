@@ -22,11 +22,23 @@
                 <a class="btn-section" href="#section-about">Sobre</a>
                 <a class="btn-section" href="#section-footer">Contato</a>
                 <a id="btn-conta" class="btn-section" href="">Conta</a>
+                <img id="logount" class="logount" th:src="@{/img/header/logount.png}" alt="logount">
                 <img id="carrinho-desktop" class="carrinho-desktop" th:src="@{/img/header/carrinho.png}" alt="carrinho">
             </nav>
         </div>
 
-        <div id="menu-rigth-container" class="menu-rigth-container"></div>
+        <div id="menu-rigth-container" class="menu-rigth-container">
+            <nav id="menu-rigth" class="menu-rigth">
+                <h2>Menu</h2>
+                <a id="signin-mobile" class="border-top" th:href="@{/signin}">Signin</a>
+                <a id="register-mobile" th:href="@{/register}">Register</a>
+                <a id="account">Account</a>
+                <a id="payments">Payments</a>
+                <a th:href="@{/home#section-about}">About</a>
+                <a id="contact-link" th:href="@{/home#section-footer}">Contact</a>
+                <a id="logount-mobile" class="border-bottom" th:href="@{/home}">Logount</a>
+            </nav>
+        </div>
 
         <div class="header-image-container">
             <img class="img-header" th:src="@{img/header/banner.jpg}" alt="img-header">
@@ -36,133 +48,15 @@
     <main>
         <a class="menu-link" th:href="@{/menu}">Menu completo</a>
 
-        <h2 class="menu-title">Nosso Menu</h2>
+        <h2 class="menu-title">Menu inicial</h2>
 
         <div class="menu-container">
-            <div class="menu-item">
-                <img th:src="@{/img/calabresa.jpg}" alt="calabresa">
+            <div class="menu-item" th:each="products : ${products}">
+                <img th:src="@{${products.imagemUrl}}" alt="imagem product">
 
                 <div class="menu-item-footer">
-                    <h3>Pizza de Calabresa</h3>
-
-                    <button id="" class="btn-descricao">Descrição</button>
-                    <button id="" class="btn-add-carrinho">Adicionar no carrinho</button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img th:src="@{/img/calabresa.jpg}" alt="calabresa">
-
-                <div class="menu-item-footer">
-                    <h3>Pizza de Calabresa</h3>
-
-                    <button id="" class="btn-descricao">Descrição</button>
-                    <button id="" class="btn-add-carrinho">Adicionar no carrinho</button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img th:src="@{/img/calabresa.jpg}" alt="calabresa">
-
-                <div class="menu-item-footer">
-                    <h3>Pizza de Calabresa</h3>
-
-                    <button id="" class="btn-descricao">Descrição</button>
-                    <button id="" class="btn-add-carrinho">Adicionar no carrinho</button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img th:src="@{/img/calabresa.jpg}" alt="calabresa">
-
-                <div class="menu-item-footer">
-                    <h3>Pizza de Calabresa</h3>
-
-                    <button id="" class="btn-descricao">Descrição</button>
-                    <button id="" class="btn-add-carrinho">Adicionar no carrinho</button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img th:src="@{/img/calabresa.jpg}" alt="calabresa">
-
-
-                <div class="menu-item-footer">
-                    <h3>Pizza de Calabresa</h3>
-
-                    <button id="" class="btn-descricao">Descrição</button>
-                    <button id="" class="btn-add-carrinho">Adicionar no carrinho</button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img th:src="@{/img/calabresa.jpg}" alt="calabresa">
-
-                <div class="menu-item-footer">
-                    <h3>Pizza de Calabresa</h3>
-
-                    <button id="" class="btn-descricao">Descrição</button>
-                    <button id="" class="btn-add-carrinho">Adicionar no carrinho</button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img th:src="@{img/calabresa.jpg}" alt="calabresa">
-
-                <div class="menu-item-footer">
-                    <h3>Pizza de Calabresa</h3>
-
-                    <button id="" class="btn-descricao">Descrição</button>
-                    <button id="" class="btn-add-carrinho">Adicionar no carrinho</button>
-                </div>
-            </div>
-
-            <div class="menu-item">
-                <img th:src="@{/img/calabresa.jpg}" alt="calabresa">
-
-                <div class="menu-item-footer">
-                    <h3>Pizza de Calabresa</h3>
-
-                    <button id="" class="btn-descricao">Descrição</button>
-                    <button id="" class="btn-add-carrinho">Adicionar no carrinho</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img th:src="@{img/calabresa.jpg}" alt="calabresa">
-
-                <div class="menu-item-footer">
-                    <h3>Pizza de Calabresa</h3>
-
-                    <button id="" class="btn-descricao">Descrição</button>
-                    <button id="" class="btn-add-carrinho">Adicionar no carrinho</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img th:src="@{/img/calabresa.jpg}" alt="calabresa">
-
-                <div class="menu-item-footer">
-                    <h3>Pizza de Calabresa</h3>
-
-                    <button id="" class="btn-descricao">Descrição</button>
-                    <button id="" class="btn-add-carrinho">Adicionar no carrinho</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img th:src="@{img/calabresa.jpg}" alt="calabresa">
-
-                <div class="menu-item-footer">
-                    <h3>Pizza de Calabresa</h3>
-
-                    <button id="" class="btn-descricao">Descrição</button>
-                    <button id="" class="btn-add-carrinho">Adicionar no carrinho</button>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img th:src="@{/img/calabresa.jpg}" alt="calabresa">
-
-                <div class="menu-item-footer">
-                    <h3>Pizza de Calabresa</h3>
-
+                    <h3 class="name" th:text="${products.name}"></h3>
+                    <h3 th:text="${products.price}"></h3>
                     <button id="" class="btn-descricao">Descrição</button>
                     <button id="" class="btn-add-carrinho">Adicionar no carrinho</button>
                 </div>

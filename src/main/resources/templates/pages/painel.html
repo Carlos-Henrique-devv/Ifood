@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/pages/painel.css}">
+    <title>Title</title>
+</head>
+<body>
+    <header>
+        <div class="container-logo">
+            <img th:src="@{/img/garfo-colher.png}" alt="Ícone de garfo e colher">
+            <h3>Painel da loja</h3>
+        </div>
+
+        <div class="container-menu">
+            <h3>Olá, João silva</h3>
+            <img th:src="@{/img/icon-user.png}" alt="Ícone de usuário">
+            <img th:src="@{/img/icon-sino.png}" alt="Ícone de sino">
+            <img th:src="@{/img/icons8-config-24.png}" alt="Ícone de configurações">
+        </div>
+    </header>
+
+    <div class="container-menu-left">
+        <a class="link-top" href="">Incio</a>
+        <a class="link-product" href="">Produtos</a>
+        <a class="link-usuarios" href="">Usuarios</a>
+        <a class="link-vendas" href="">Vendas</a>
+        <a class="link-relatorios" href="">Categorias</a>
+    </div>
+
+    <main>
+        <div class="container-relatorios">
+            <a class="card-item" th:href="@{/products}">
+                <div class="container-top">
+                    <img th:src="@{img/icons8--50.png}" alt="product">
+                    <h3>Produtos</h3>   
+                </div>
+
+                <p>Gerencie seus produtos.</p>
+            </a>
+
+            <a class="card-item" href="">
+                <div class="container-top">
+                    <img th:src="@{/img/icons8-category-50.png}" alt="category">
+                    <h3>Categorias</h3>
+                </div>
+            
+                <p>Gerencie suas categorias.</p>
+            </a>
+
+            <a class="card-item" href="">
+                <div class="container-top">
+                    <img th:src="@{/img/icons8-dollar-bag-50.png}" alt="sales">
+                    <h3>Vendas do mês</h3>
+                </div>
+
+                <p>35.000R$</p>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

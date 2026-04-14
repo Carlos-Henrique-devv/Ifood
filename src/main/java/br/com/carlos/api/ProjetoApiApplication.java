@@ -32,6 +32,10 @@ public class ProjetoApiApplication {
                 iRole.save(new Role("ROLE_ADMIN"));
             }
 
+            if(iRole.findByName("ROLE_COMMON").isEmpty()) {
+                iRole.save(new Role("ROLE_COMMON"));
+            }
+
             if (iUserRole.findByUsername("admin").isEmpty()) {
                 Role adminRole = iRole.findByName("ROLE_ADMIN").get();
                 UserRole admin = new UserRole("admin", passwordEncoder.encode("Admin123."), Set.of(adminRole));

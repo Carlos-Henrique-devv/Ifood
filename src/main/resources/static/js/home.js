@@ -1,34 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
 
-    if (token) {
-        document.getElementById("btn-login").style.display = "none";
-        document.getElementById("btn-cadastro").style.display = "none";
-    } else {
-        document.getElementById("btn-conta").style.display = "none";
-    }
+  if (token) {
+      document.getElementById("btn-login").style.display = "none";
+      document.getElementById("btn-cadastro").style.display = "none";
+      document.getElementById("signin-mobile").style.display = "none";
+      document.getElementById("register-mobile").style.display = "none";
+      document.getElementById("account").classList.add('border-top');
+  } else {
+      document.getElementById("btn-conta").style.display = "none";
+      document.getElementById("logount").style.display = "none";
+      document.getElementById("logount-mobile").style.display = "none";
+      document.getElementById("contact-link").classList.add('border-bottom');
+      document.getElementById("payments").style.display = "none";
+  }
+
+  inicializarMenuHarburger();
+//  logount();
 });
-
-fetch('/components/menu-rigth.html')
-  .then(res => res.text())
-  .then(data => {
-    const container = document.getElementById('menu-rigth-container');
-    container.innerHTML = data;
-
-    inicializarMenuHarburger();
-  })
-  .catch(err => console.error(err));
 
 function inicializarMenuHarburger() {
   const menuHarburger = document.getElementById('menu-harburger');
   const menuRightContainer = document.getElementById('menu-rigth-container');
 
   menuHarburger.addEventListener('click', (e) => {
-        e.stopPropagation();
-        menuHarburger.classList.remove('menu-harburger');
-        menuHarburger.classList.add('menu-harburger-remove');
-        menuRightContainer.classList.remove('menu-rigth-container');
-        menuRightContainer.classList.add('menu-rigth-container-open');
+      e.stopPropagation();
+      menuHarburger.classList.remove('menu-harburger');
+      menuHarburger.classList.add('menu-harburger-remove');
+      menuRightContainer.classList.remove('menu-rigth-container');
+      menuRightContainer.classList.add('menu-rigth-container-open');
   });
 
   menuRightContainer.addEventListener('click', (e) => {
@@ -42,5 +42,19 @@ function inicializarMenuHarburger() {
     menuRightContainer.classList.add('menu-rigth-container');
     menuRightContainer.classList.remove('menu-rigth-container-open');
   });
-}
+};
 
+//function logount() {
+//  const btnLogount = document.getElementById('logount');
+//  const btnLogountMobile = document.getElementById('logount-mobile');
+//
+//  btnLogount.addEventListener('click', () => {
+//      localStorage.removeItem("token");
+//      window.location.href = "/home";
+//  });
+//
+//  btnLogountMobile.addEventListener('click', () => {
+//      localStorage.removeItem("token");
+//      window.location.href = "/home";
+//  })
+//}
